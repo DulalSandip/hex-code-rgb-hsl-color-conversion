@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hex, RGB and HSL Color Conversion Tool</title>
+    <meta
+      name="description"
+      content="Convert hex color codes to HSL and RGB formats."
+    />
+    <meta
+      name="keywords"
+      content="Hex to HSL, colorn name to hex code, color conversion, RGB, HSL, hex color code"
+    />
+    <!-- Open Graph and Twitter Cards meta tags -->
+    <meta property="og:title" content="Hex to RGB and HSL Color Conversion" />
+    <meta
+      property="og:description"
+      content="Convert hex color codes to HSL and RGB formats."
+    />
+    <meta property="og:image" content="/public/tool_sample.png" />
+    <meta
+      property="og:url"
+      content="https://colorconverter.sandipdulal.com.np"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hex to RGB and HSL Color Conversion" />
+    <meta
+      name="twitter:description"
+      content="Convert hex color codes to HSL and RGB formats."
+    />
+    <meta name="twitter:image" content="path/to/your-thumbnail-image.jpg" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card shadow">
+        <div class="card-body">
+          <h1 class="card-title text-center">
+            Hex to HSL Color Conversion Tool
+          </h1>
+          <form id="colorForm" class="mt-4">
+            <div class="form-group">
+              <label for="colorInput">Enter a hex color code or name:</label>
+              <input
+                type="text"
+                id="colorInput"
+                name="colorInput"
+                class="form-control"
+                placeholder="#00B0F0 or red"
+                required
+              />
+            </div>
+            <div
+              id="errorMessage"
+              class="alert alert-danger"
+              style="display: none"
+            ></div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Convert
+            </button>
+          </form>
+          <div id="colorResult" class="mt-4" style="display: none">
+            <div class="color-box mx-auto mb-3" id="colorBox"></div>
+            <table class="table table-bordered">
+              <tr>
+                <th>Name</th>
+                <td id="colorName">N/A</td>
+              </tr>
+              <tr>
+                <th>Hex</th>
+                <td id="hexValue">N/A</td>
+              </tr>
+              <tr>
+                <th>HSL</th>
+                <td id="hslValue">N/A</td>
+              </tr>
+              <tr>
+                <th>RGB</th>
+                <td id="rgbValue">N/A</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br /><br /><br />
+    <br /><br /><br />
+
+    <!-- Description section above footer -->
+    <div class="container-fluid bg-dark text-white py-3 mt-auto">
+      <div class="container text-center">
+        <p class="mb-0">
+          This tool converts Hex Code to RGB and HSL Color and also Color Name
+          to Hex Code, RGB and HSL Color.
+        </p>
+      </div>
+    </div>
+
+    <br />
+    <br /><br /><br /><br />
+    <br /><br /><br />
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <div class="container text-center">
+        <p id="copyright">&copy; 2024 . All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="colors.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

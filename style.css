@@ -1,0 +1,59 @@
+body {
+  background-color: #f8f9fa;
+  color: #343a40;
+  min-height: 100vh; /* Ensure body takes up at least the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced between header, main, and footer */
+  margin: 0; /* Remove default body margin */
+}
+
+.container {
+  flex: 1; /* Allow container to expand to fill available space */
+}
+
+.card {
+  max-width: 500px;
+  margin: 20px auto; /* Added margin for spacing */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+  background-color: #ffffff; /* Added background color */
+  padding: 20px; /* Added padding */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  text-align: center; /* Center align the card title */
+  margin-bottom: 15px; /* Added margin for spacing */
+}
+
+.color-box {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px; /* Center align and add bottom margin */
+  border: 2px solid #343a40;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+#colorResult {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px; /* Added top margin */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+}
+
+.footer {
+  background-color: #343a40; /* Footer background color */
+  color: #ffffff; /* Footer text color */
+  padding: 20px 0; /* Vertical padding for footer content */
+  text-align: center; /* Center align footer content */
+  width: 100%; /* Full width */
+  position: fixed; /* Fixed positioning */
+  bottom: 0; /* Stick to the bottom */
+}
