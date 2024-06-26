@@ -1,14 +1,3 @@
-// // Wait for the DOM to fully load before running the script
-// document.addEventListener("DOMContentLoaded", function () {
-//   // Get the current year
-//   const currentYear = new Date().getFullYear();
-
-//   // Update the copyright year in the footer
-//   document.getElementById(
-//     "copyright"
-//   ).innerText = `@copyright; ${currentYear} Sandip Dulal. All rights reserved.`;
-// });
-
 function hexToRGB(hex) {
   let r = parseInt(hex.slice(1, 3), 16);
   let g = parseInt(hex.slice(3, 5), 16);
