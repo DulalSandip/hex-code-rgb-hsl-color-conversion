@@ -14,7 +14,8 @@ body {
 
 .card {
   max-width: 500px;
-  margin: 20px auto; /* Added margin for spacing */
+
+  margin: 10px auto; /* Added margin for spacing */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
   background-color: #ffffff; /* Added background color */
@@ -49,11 +50,12 @@ body {
 }
 
 .footer {
-  background-color: #343a40; /* Footer background color */
-  color: #ffffff; /* Footer text color */
-  padding: 20px 0; /* Vertical padding for footer content */
+  /* Footer background color */
+  /* background-color: #343a40;  */
+  color: black; /* Footer text color */
+  padding: 20px 1; /* Vertical padding for footer content */
   text-align: center; /* Center align footer content */
   width: 100%; /* Full width */
-  position: fixed; /* Fixed positioning */
+  position: relative; /* Fixed positioning */
   bottom: 0; /* Stick to the bottom */
 }
