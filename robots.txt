@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+
+Sitemap: https://colorconverter.sandipdulal.com.np/sitemap.xml
