@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 function hexToRGB(hex) {
   let r = parseInt(hex.slice(1, 3), 16);
   let g = parseInt(hex.slice(3, 5), 16);
@@ -64,7 +65,9 @@ document.getElementById("colorForm").addEventListener("submit", function (e) {
     name = "N/A";
   } else {
     name = input.toLowerCase();
+    console.log(name);
     hex = colorNames[name];
+
     if (!hex) {
       errorMessage.innerText = "Please enter a valid color name.";
       errorMessage.style.display = "block";
@@ -78,4 +81,5 @@ document.getElementById("colorForm").addEventListener("submit", function (e) {
   document.getElementById("colorResult").style.display = "block";
   updateColorDisplay(hex, hsl, rgb, name);
   errorMessage.style.display = "none";
+});
 });
