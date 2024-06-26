@@ -13,7 +13,14 @@
       content="Hex to HSL, colorn name to hex code, color conversion, RGB, HSL, hex color code"
     />
     <!-- Open Graph and Twitter Cards meta tags -->
-    <meta property="og:title" content="Hex to RGB and HSL Color Conversion" />
+    <meta
+      property="og:title"
+      content="Hex Code to RGB and HSL Color Conversion Tool"
+    />
+    <meta
+      property="og:site_name"
+      content="Hex Code to RGB and HSL Color Conversion Tool"
+    />
     <meta
       property="og:description"
       content="Convert hex color codes to HSL and RGB formats."
@@ -30,7 +37,7 @@
       name="twitter:description"
       content="Convert hex color codes to HSL and RGB formats."
     />
-    <meta name="twitter:image" content="path/to/your-thumbnail-image.jpg" />
+    <meta name="twitter:image" content="/public/tool_sample.png" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -38,8 +45,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="/public/icon.png" type="image/png" />
   </head>
   <body>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "Hex, RGB and HSL Color Conversion Tool",
+        "url": "https://colorconverter.sandipdulal.com.np",
+        "image": "https://colorconverter.sandipdulal.com.np/public/tool_sample.png",
+        "description": "This tool converts Hex code, color names to HSL and RGB formats.",
+        "author": {
+          "@type": "Person",
+          "name": "Sandip Dulal",
+          "url": "https://sandipdulal.com.np"
+        }
+      }
+    </script>
+
     <!-- Description section  -->
     <div class="container-fluid bg-dark text-white py-2 mt-auto">
       <div class="container text-center">
