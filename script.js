@@ -127,7 +127,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (activeSuggestion) {
         colorInput.value = activeSuggestion.textContent;
         suggestions.style.display = "none";
-        document.getElementById("colorForm").dispatchEvent(new Event("submit"));
+
+        document
+          .getElementById("colorForm")
+          .dispatchEvent(new Event("submit", { cancelable: true })); // cancelable:true is necessary to run on mozilla firefox browser as for other browsers is not required
       }
     }
   });
@@ -143,7 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target.tagName === "LI") {
       colorInput.value = event.target.textContent;
       suggestions.style.display = "none";
-      document.getElementById("colorForm").dispatchEvent(new Event("submit"));
+      document
+        .getElementById("colorForm")
+        .dispatchEvent(new Event("submit", { cancelable: true })); // cancelable:true is necessary to run on mozilla firefox browser as for other browsers is not required
     }
   });
 
