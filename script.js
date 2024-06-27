@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       s,
       l = (max + min) / 2;
 
-    if (max == min) {
+    if (max === min) {
       h = s = 0;
     } else {
       let d = max - min;
@@ -49,9 +49,107 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("colorBox").style.backgroundColor = hex;
   }
 
+  function suggestColorNames(input) {
+    const lowerInput = input.toLowerCase().trim();
+    const suggestions = Object.keys(colorNames)
+      .sort((a, b) => {
+        if (a.toLowerCase() === lowerInput) return -1;
+        if (b.toLowerCase() === lowerInput) return 1;
+        return (
+          a.toLowerCase().localeCompare(lowerInput) -
+          b.toLowerCase().localeCompare(lowerInput)
+        );
+      })
+      .filter((name) => name.toLowerCase().includes(lowerInput));
+
+    return suggestions; // Return all suggestions that match the input
+  }
+
+  function updateSuggestions(suggestions) {
+    const suggestionList = document.getElementById("suggestions");
+    suggestionList.innerHTML = "";
+    suggestions.forEach((name) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = name;
+      suggestionList.appendChild(listItem);
+    });
+    suggestionList.style.display = suggestions.length ? "block" : "none";
+    activateFirstSuggestion();
+  }
+
+  function activateFirstSuggestion() {
+    const suggestionList = document.getElementById("suggestions");
+    const firstSuggestion = suggestionList.querySelector("li");
+    if (firstSuggestion) {
+      firstSuggestion.classList.add("active");
+    }
+  }
+
+  const colorInput = document.getElementById("colorInput");
+  const suggestions = document.getElementById("suggestions");
+
+  colorInput.addEventListener("input", function () {
+    const input = this.value.trim();
+    const suggestionsList = suggestColorNames(input);
+    updateSuggestions(suggestionsList);
+
+    // Hide suggestions if input is empty
+    if (input === "") {
+      suggestions.style.display = "none";
+    }
+  });
+
+  colorInput.addEventListener("keydown", function (event) {
+    const key = event.key;
+
+    if (key === "ArrowUp" || key === "ArrowDown") {
+      event.preventDefault(); // Prevent default scrolling behavior
+      const currentActive = suggestions.querySelector("li.active");
+      let nextActive;
+
+      if (!currentActive && key === "ArrowDown") {
+        nextActive = suggestions.querySelector("li");
+      } else if (currentActive && key === "ArrowUp") {
+        nextActive = currentActive.previousElementSibling;
+      } else if (currentActive && key === "ArrowDown") {
+        nextActive = currentActive.nextElementSibling;
+      }
+
+      if (nextActive) {
+        if (currentActive) {
+          currentActive.classList.remove("active");
+        }
+        nextActive.classList.add("active");
+        nextActive.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    } else if (key === "Enter") {
+      const activeSuggestion = suggestions.querySelector("li.active");
+      if (activeSuggestion) {
+        colorInput.value = activeSuggestion.textContent;
+        suggestions.style.display = "none";
+        document.getElementById("colorForm").dispatchEvent(new Event("submit"));
+      }
+    }
+  });
+
+  colorInput.addEventListener("focusout", function () {
+    // Hide suggestions when focus is lost
+    setTimeout(() => {
+      suggestions.style.display = "none";
+    }, 200); // Delay to allow click event on suggestion
+  });
+
+  suggestions.addEventListener("click", function (event) {
+    if (event.target.tagName === "LI") {
+      colorInput.value = event.target.textContent;
+      suggestions.style.display = "none";
+      document.getElementById("colorForm").dispatchEvent(new Event("submit"));
+    }
+  });
+
   document.getElementById("colorForm").addEventListener("submit", function (e) {
     e.preventDefault();
-    let input = document.getElementById("colorInput").value.trim();
+    let input = colorInput.value.trim();
     let errorMessage = document.getElementById("errorMessage");
     let hex, name;
 
@@ -65,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
       name = "N/A";
     } else {
       name = input.toLowerCase();
-      console.log(name);
       hex = colorNames[name];
 
       if (!hex) {
@@ -81,5 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("colorResult").style.display = "block";
     updateColorDisplay(hex, hsl, rgb, name);
     errorMessage.style.display = "none";
+    suggestions.style.display = "none"; // Hide suggestions after selection
   });
 });

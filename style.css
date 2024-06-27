@@ -1,37 +1,36 @@
 body {
   background-color: #f8f9fa;
   color: #343a40;
-  min-height: 100vh; /* Ensure body takes up at least the full height of the viewport */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Ensure content is spaced between header, main, and footer */
-  margin: 0; /* Remove default body margin */
+  justify-content: space-between;
+  margin: 0;
 }
 
 .container {
-  flex: 1; /* Allow container to expand to fill available space */
+  flex: 1;
 }
 
 .card {
   max-width: 500px;
-
-  margin: 10px auto; /* Added margin for spacing */
+  margin: 10px auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
-  background-color: #ffffff; /* Added background color */
-  padding: 20px; /* Added padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 20px;
 }
 
 .card-title {
   font-size: 1.5rem;
-  text-align: center; /* Center align the card title */
-  margin-bottom: 15px; /* Added margin for spacing */
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .color-box {
   width: 100px;
   height: 100px;
-  margin: 0 auto 10px; /* Center align and add bottom margin */
+  margin: 0 auto 10px;
   border: 2px solid #343a40;
 }
 
@@ -45,17 +44,53 @@ body {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px; /* Added top margin */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer {
-  /* Footer background color */
-  /* background-color: #343a40;  */
-  color: black; /* Footer text color */
-  padding: 20px 1; /* Vertical padding for footer content */
-  text-align: center; /* Center align footer content */
-  width: 100%; /* Full width */
-  position: relative; /* Fixed positioning */
-  bottom: 0; /* Stick to the bottom */
+  color: black;
+  padding: 20px 1;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+#suggestions {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: calc(100% - 2px);
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ced4da;
+  border-top: none;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+#suggestions.active {
+  display: block;
+}
+
+#suggestions li {
+  cursor: pointer;
+  padding: 10px;
+  list-style-type: none;
+  border-bottom: 1px solid #ced4da;
+}
+
+#suggestions li:hover {
+  background-color: #f8f9fa;
+}
+
+#suggestions li.active {
+  background-color: #434444; /* Example color for active suggestion */
+  color: white; /* Example color for active suggestion text */
+}
+
+#suggestions li:first-child {
+  border-top: 1px solid #ced4da;
 }

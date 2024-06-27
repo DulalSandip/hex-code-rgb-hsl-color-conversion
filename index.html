@@ -25,13 +25,11 @@
       property="og:description"
       content="Easily convert hex color codes to HSL and RGB formats. This user-friendly tool also allows conversion of color names to Hex, RGB, and HSL values with live color visualization."
     />
-
     <meta property="og:image" content="/public/icon.png" />
     <meta
       property="og:url"
       content="https://colorconverter.sandipdulal.com.np"
     />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Hex to RGB and HSL Color Conversion" />
     <meta
@@ -39,7 +37,6 @@
       content="Easily convert hex color codes to HSL and RGB formats. This user-friendly tool also allows conversion of color names to Hex, RGB, and HSL values with live color visualization."
     />
     <meta name="twitter:image" content="/public/icon.png" />
-
     <!-- Bootstrap CSS -->
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -83,7 +80,7 @@
             Hex to HSL Color Conversion Tool
           </h1>
           <form id="colorForm" class="mt-4">
-            <div class="form-group">
+            <div class="form-group position-relative">
               <label for="colorInput">Enter a hex color code or name:</label>
               <input
                 type="text"
@@ -93,6 +90,11 @@
                 placeholder="#00B0F0 or red"
                 required
               />
+              <ul
+                id="suggestions"
+                class="list-group position-absolute w-100"
+                style="display: none"
+              ></ul>
             </div>
             <div
               id="errorMessage"
@@ -134,7 +136,7 @@
         <p id="copyright">
           Copyright &copy; <span id="year"></span>
           <a href="https://sandipdulal.com.np">Sandip Dulal</a>. All rights
-          reserved.
+          reserved. ( Version: 1.1.1 )
         </p>
       </div>
     </footer>
