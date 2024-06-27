@@ -6,10 +6,11 @@ Welcome to the Color Converter Tools repository! This project provides a simple 
 
 ## Features
 
-- **Hex to RGB and HSL Conversion:** Convert Hex color codes to RGB and HSL formats effortlessly.
-- **Color Name to Hex, RGB, and HSL Conversion:** Convert color names to their corresponding Hex, RGB, and HSL values.
-- **Live Color Visualization:** See the color visually displayed in a box after entering a color name or Hex code.
-- **User-Friendly Interface:** Enjoy a clean and intuitive design with Bootstrap for easy usage.
+- **Hex to RGB and HSL Conversion:( v1.0.0):** Convert Hex color codes to RGB and HSL formats effortlessly.
+- **Color Name to Hex, RGB, and HSL Conversion:( v1.0.0):** Convert color names to their corresponding Hex, RGB, and HSL values.
+- **Live Color Visualization:( v1.0.0):** See the color visually displayed in a box after entering a color name or Hex code.
+- **User-Friendly Interface:( v1.0.0):** Enjoy a clean and intuitive design with Bootstrap for easy usage.
+- **Search Recommendation:( v1.1.1):** Get suggestions for color names as you type, with the ability to select from a list of matching colors.
 
 ## Demo
 
@@ -21,27 +22,32 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/yourusername/hex-code-rgb-hsl-color-conversion.git
-    ```
+   ```bash
+   git clone https://github.com/yourusername/hex-code-rgb-hsl-color-conversion.git
+   ```
 
 2. **Navigate to the project directory:**
 
-    ```bash
-    cd hex-code-rgb-hsl-color-conversion
-    ```
+   ```bash
+   cd hex-code-rgb-hsl-color-conversion
+   ```
 
 3. **Open the index.html file in your browser:**
 
-    ```bash
-    open index.html
-    ```
+   ```bash
+   open index.html
+   ```
 
 ## Usage
 
 1. Enter a Hex color code or a color name in the input field.
 2. Click the "Convert" button.
 3. The tool will display the color in a visual box and provide the Hex, RGB, and HSL values.
+
+## Color Names and Hex Code Search
+
+- The `colors.js` file contains a list of color names that helps in searching for color names using fuzzy search.
+- Searching by Hex code is independent of `colors.js` and uses a direct algorithmic approach i.e it first convert to hexadecimaal to RGB and RGB to HCL and it also uses fuzzy search.
 
 ## Contributing
 
@@ -50,4 +56,3 @@ If you'd like to contribute to this project, please fork the repository and use 
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
