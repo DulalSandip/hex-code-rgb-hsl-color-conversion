@@ -11,6 +11,11 @@ Welcome to the Color Converter Tools repository! This project provides a simple 
 - **Live Color Visualization:( v1.0.0):** See the color visually displayed in a box after entering a color name or Hex code.
 - **User-Friendly Interface:( v1.0.0):** Enjoy a clean and intuitive design with Bootstrap for easy usage.
 - **Search Recommendation:( v1.1.1):** Get suggestions for color names as you type, with the ability to select from a list of matching colors.
+- **Switch Tab Option:( v1.1.1):** Easily switch between manual input and color picker tabs to input colors or hex codes.
+- **Dynamic Color Picker:( v1.1.1):** Select colors dynamically with real-time evaluation of Hex, RGB, and HSL formats.
+- **Recommended Colors:( v1.1.1):** Discover recommended colors based on a mathematical algorithm after selecting a color.
+
+
 
 ## Demo
 
