@@ -68,7 +68,7 @@
         <p class="mb-0">
           Easily convert hex color codes to HSL and RGB formats. This
           user-friendly tool also allows conversion of color names to Hex, RGB,
-          and HSL values with live color visualization..
+          and HSL values with live color visualization.
         </p>
       </div>
     </div>
@@ -76,35 +76,83 @@
     <div class="container mt-5">
       <div class="card shadow">
         <div class="card-body">
-          <h1 class="card-title text-center">
-            Hex to HSL Color Conversion Tool
-          </h1>
-          <form id="colorForm" class="mt-4">
-            <div class="form-group position-relative">
-              <label for="colorInput">Enter a hex color code or name:</label>
-              <input
-                type="text"
-                id="colorInput"
-                name="colorInput"
-                class="form-control"
-                placeholder="#00B0F0 or red"
-                required
-              />
-              <ul
-                id="suggestions"
-                class="list-group position-absolute w-100"
-                style="display: none"
-              ></ul>
+          <h1 class="card-title text-center">Color Conversion Tool</h1>
+          <ul class="nav nav-tabs" id="colorTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="manual-tab"
+                data-toggle="tab"
+                href="#manual"
+                role="tab"
+                aria-controls="manual"
+                aria-selected="true"
+                >Manual Input</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="picker-tab"
+                data-toggle="tab"
+                href="#picker"
+                role="tab"
+                aria-controls="picker"
+                aria-selected="false"
+                >Color Picker</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content" id="colorTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="manual"
+              role="tabpanel"
+              aria-labelledby="manual-tab"
+            >
+              <form id="colorForm" class="mt-4">
+                <div class="form-group position-relative">
+                  <label for="colorInput"
+                    >Enter a hex color code or name:</label
+                  >
+                  <input
+                    type="text"
+                    id="colorInput"
+                    name="colorInput"
+                    class="form-control"
+                    placeholder="#00B0F0 or red"
+                    required
+                  />
+                  <ul
+                    id="suggestions"
+                    class="list-group position-absolute w-100"
+                    style="display: none"
+                  ></ul>
+                </div>
+                <div
+                  id="errorMessage"
+                  class="alert alert-danger"
+                  style="display: none"
+                ></div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Convert
+                </button>
+              </form>
             </div>
             <div
-              id="errorMessage"
-              class="alert alert-danger"
-              style="display: none"
-            ></div>
-            <button type="submit" class="btn btn-primary btn-block">
-              Convert
-            </button>
-          </form>
+              class="tab-pane fade"
+              id="picker"
+              role="tabpanel"
+              aria-labelledby="picker-tab"
+            >
+              <form id="colorPickerForm" class="mt-4">
+                <div class="form-group">
+                  <label for="colorPicker">Choose a color:</label>
+                  <input type="color" id="colorPicker" class="form-control" />
+                </div>
+              </form>
+            </div>
+          </div>
           <div id="colorResult" class="mt-4" style="display: none">
             <div class="color-box mx-auto mb-3" id="colorBox"></div>
             <table class="table table-bordered">
@@ -130,13 +178,47 @@
       </div>
     </div>
 
+    <div class="container mt-5" id="similarColors" style="display: none">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center">Recommended Colors</h2>
+          <p class="text-center">
+            The color recommendation system utilizes algorithms to convert
+            hexadecimal colors to RGB and HSL formats. It adjusts brightness
+            levels using a lighten/darken function, generating variations like
+            lighter and darker shades. These variations, along with fixed colors
+            such as pure white and black, are displayed to provide a range of
+            recommended colors based on the user's selection.
+          </p>
+
+          <div class="row" id="similarColorsList">
+            <!-- Similar color cards will be appended here -->
+            <div
+              class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 similar-color-card"
+              style="display: none"
+            >
+              <div class="card">
+                <div class="card-body text-center">
+                  <div
+                    class="color-box mx-auto mb-3"
+                    style="width: 100px; height: 100px; border: 1px solid #000"
+                  ></div>
+                  <p class="card-text">Color Info</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Footer section -->
     <footer class="footer">
       <div class="container text-center">
         <p id="copyright">
           Copyright &copy; <span id="year"></span>
           <a href="https://sandipdulal.com.np">Sandip Dulal</a>. All rights
-          reserved. ( Version: 1.1.2 )
+          reserved. ( Version: 2.1.2 )
         </p>
       </div>
     </footer>

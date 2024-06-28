@@ -50,7 +50,7 @@ body {
 
 .footer {
   color: black;
-  padding: 20px 1;
+  padding: 20px 0;
   text-align: center;
   width: 100%;
   position: relative;
@@ -69,6 +69,7 @@ body {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: none;
+  z-index: 1000;
 }
 
 #suggestions.active {
@@ -87,10 +88,93 @@ body {
 }
 
 #suggestions li.active {
-  background-color: #434444; /* Example color for active suggestion */
-  color: white; /* Example color for active suggestion text */
+  background-color: #434444;
+  color: white;
 }
 
 #suggestions li:first-child {
   border-top: 1px solid #ced4da;
+}
+
+/* Style for input boxes */
+input[type="text"],
+input[type="color"] {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  margin-top: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+input[type="color"] {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+/* Additional styles for hiding colorResult when switching tabs */
+.tab-content .tab-pane {
+  display: none;
+}
+
+.tab-content .tab-pane.active {
+  display: block;
+}
+
+/* Set color picker dropdown width */
+#colorPicker {
+  width: 100% !important;
+}
+
+/* Optional: Ensure the parent container has full width */
+#picker .form-group {
+  width: 100%;
+}
+
+/* Styles for Similar Colors section */
+#similarColors {
+  margin-top: 20px;
+  display: none;
+}
+
+#similarColors .card {
+  max-width: 100%; /* Adjust to fit the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+#similarColors .card-title {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#similarColors .color-box {
+  width: 100px; /* Adjust based on your design */
+  height: 100px; /* Adjust based on your design */
+  margin: 0 auto 10px;
+  border: 2px solid #343a40;
+  border-radius: 10px;
+}
+
+@media (min-width: 576px) {
+  #similarColors {
+    display: block;
+  }
+
+  #similarColors .color-box {
+    width: 120px; /* Adjust based on your design */
+    height: 120px; /* Adjust based on your design */
+  }
 }
