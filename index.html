@@ -12,7 +12,6 @@
       name="keywords"
       content="Hex to HSL, color name to hex code, color conversion, RGB, HSL, hex color code"
     />
-    <!-- Open Graph and Twitter Cards meta tags -->
     <meta
       property="og:title"
       content="Hex, RGB, and HSL Color Conversion Tool"
@@ -37,10 +36,13 @@
       content="Easily convert hex color codes to HSL and RGB formats. This user-friendly tool also allows conversion of color names to Hex, RGB, and HSL values with live color visualization."
     />
     <meta name="twitter:image" content="/public/icon.png" />
-    <!-- Bootstrap CSS -->
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="/public/icon.png" type="image/png" />
@@ -152,27 +154,63 @@
                 </div>
               </form>
             </div>
-          </div>
-          <div id="colorResult" class="mt-4" style="display: none">
-            <div class="color-box mx-auto mb-3" id="colorBox"></div>
-            <table class="table table-bordered">
-              <tr>
-                <th>Name</th>
-                <td id="colorName">N/A</td>
-              </tr>
-              <tr>
-                <th>Hex</th>
-                <td id="hexValue">N/A</td>
-              </tr>
-              <tr>
-                <th>HSL</th>
-                <td id="hslValue">N/A</td>
-              </tr>
-              <tr>
-                <th>RGB</th>
-                <td id="rgbValue">N/A</td>
-              </tr>
-            </table>
+            <div id="colorResult" class="mt-4" style="display: none">
+              <div class="color-box mx-auto mb-3" id="colorBox"></div>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Name</th>
+                  <td id="colorName">N/A</td>
+                  <td>
+                    <span class="copy-icon" data-copy-target="colorName">
+                      <i
+                        class="far fa-copy"
+                        style="font-size: 25px; color: rgb(55, 10, 10)"
+                      ></i>
+                    </span>
+                    <div class="copy-message">Copied to clipboard</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Hex</th>
+                  <td id="hexValue">N/A</td>
+                  <td>
+                    <span class="copy-icon" data-copy-target="hexValue">
+                      <i
+                        class="far fa-copy"
+                        style="font-size: 25px; color: rgb(55, 10, 10)"
+                      ></i>
+                    </span>
+                    <div class="copy-message">Copied to clipboard</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>HSL</th>
+                  <td id="hslValue">N/A</td>
+                  <td>
+                    <span class="copy-icon" data-copy-target="hslValue">
+                      <i
+                        class="far fa-copy"
+                        style="font-size: 25px; color: rgb(55, 10, 10)"
+                      ></i>
+                    </span>
+                    <div class="copy-message">Copied to clipboard</div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>RGB</th>
+                  <td id="rgbValue">N/A</td>
+                  <td>
+                    <span class="copy-icon" data-copy-target="rgbValue">
+                      <i
+                        class="far fa-copy"
+                        style="font-size: 25px; color: rgb(55, 10, 10)"
+                      ></i>
+                    </span>
+                    <div class="copy-message">Copied to clipboard</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -184,7 +222,6 @@
           <h2 class="card-title text-center">
             <strong>Recommended Colors</strong>
           </h2>
-
           <p class="text-center">
             The color recommendation system utilizes algorithms to convert
             hexadecimal colors to RGB and HSL formats. It adjusts brightness
@@ -193,7 +230,6 @@
             such as pure white and black, are displayed to provide a range of
             recommended colors based on the user's selection.
           </p>
-
           <div class="row" id="similarColorsList">
             <!-- Similar color cards will be appended here -->
             <div
@@ -221,8 +257,9 @@
         <p id="copyright">
           Copyright &copy; <span id="year"></span>
           <a href="https://sandipdulal.com.np">Sandip Dulal</a>. All rights
-          reserved. ( Version: 2.1.1 )
+          reserved. ( Version: 2.1.2 )
         </p>
+        <p><a href="privacypolicy.html">Privacy Policy</a></p>
       </div>
     </footer>
 

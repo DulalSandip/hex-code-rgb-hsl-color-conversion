@@ -1,6 +1,6 @@
 # Color Converter Tools by Sandip Dulal
 
-Welcome to the Color Converter Tools repository! This project provides a simple web tool to convert color codes and names between different formats, such as Hex, RGB, and HSL. You can enter a color name or hex code, and the tool will display the corresponding color values.
+Welcome to the Color Converter Tools repository! This project provides a simple web tool to convert color codes and names between different formats, such as Hex, RGB, and HSL. You can enter a color name or hex code, use the integrated color picker for visual selection, and explore color recommendations based on your color selection.
 
 ![Tool Sample](public/tool_sample.png)
 
@@ -11,11 +11,10 @@ Welcome to the Color Converter Tools repository! This project provides a simple 
 - **Live Color Visualization:( v1.0.0):** See the color visually displayed in a box after entering a color name or Hex code.
 - **User-Friendly Interface:( v1.0.0):** Enjoy a clean and intuitive design with Bootstrap for easy usage.
 - **Search Recommendation:( v1.1.1):** Get suggestions for color names as you type, with the ability to select from a list of matching colors.
-- **Switch Tab Option:( v1.1.1):** Easily switch between manual input and color picker tabs to input colors or hex codes.
-- **Dynamic Color Picker:( v1.1.1):** Select colors dynamically with real-time evaluation of Hex, RGB, and HSL formats.
-- **Recommended Colors:( v1.1.1):** Discover recommended colors based on a mathematical algorithm after selecting a color.
-
-
+- **Switch Tab Option:( v2.1.2):** Easily switch between manual input and color picker tabs to input colors or hex codes.
+- **Dynamic Color Picker:( v2.1.2):** Select colors dynamically with real-time evaluation of Hex, RGB, and HSL formats.
+- **Recommended Colors:( v2.1.2):** Discover recommended colors based on a mathematical algorithm after selecting a color.
+- **Copy to Clipboard:( v2.2.2):** Users can copy the color name, hex code, rgb value and hsl value by clicking on copy to clipboard icon.
 
 ## Demo
 

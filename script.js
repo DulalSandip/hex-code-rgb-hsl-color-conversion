@@ -1,4 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Function to copy text to clipboard
+  function copyToClipboard(text, iconElement) {
+    const tempInput = document.createElement("input");
+    tempInput.style.position = "absolute";
+    tempInput.style.left = "-9999px";
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    // document.body.removeChild(tempInput);
+    // Show the copied message
+    const messageElement = iconElement.nextElementSibling;
+    messageElement.style.display = "block";
+    setTimeout(() => {
+      messageElement.style.display = "none";
+    }, 4500);
+  }
+
+  // Add event listeners to all copy icons
+  document.querySelectorAll(".copy-icon").forEach((icon) => {
+    icon.addEventListener("click", () => {
+      const targetId = icon.getAttribute("data-copy-target");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        let textToCopy = targetElement.innerText.trim();
+
+        // Handle specific formats
+        if (targetId === "hslValue" || targetId === "rgbValue") {
+          textToCopy = textToCopy.replace(/[^0-9,% ]/g, "").trim();
+        }
+        copyToClipboard(textToCopy, icon);
+      }
+    });
+  });
+
   // Function to convert hex color to RGB
   function hexToRGB(hex) {
     let r = parseInt(hex.slice(1, 3), 16);
@@ -44,10 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("hexValue").innerText = hex;
     document.getElementById(
       "hslValue"
-    ).innerText = `HSL: hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+    ).innerText = ` hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
     document.getElementById(
       "rgbValue"
-    ).innerText = `RGB: rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+    ).innerText = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
     document.getElementById("colorName").innerText = name;
     document.getElementById("colorBox").style.backgroundColor = hex;
     document.getElementById("colorPicker").value = hex;

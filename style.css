@@ -57,6 +57,41 @@ body {
   bottom: 0;
 }
 
+/* Styles for centering the content */
+.centered-content {
+  display: flex;
+
+  min-height: 100vh;
+
+  flex-direction: column;
+  padding: 50px;
+}
+
+.centered-content h1 {
+  margin-bottom: 20px;
+}
+
+.centered-content p {
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 20px; /* Added margin for spacing between paragraphs */
+}
+
+.centered-content ul {
+  text-align: left; /* Align bullet points to the left */
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default left padding */
+}
+
+.centered-content ul li {
+  margin-bottom: 10px; /* Add spacing between list items */
+  line-height: 1.4; /* Adjust line height for list items */
+}
+
+.centered-content strong {
+  font-weight: bold; /* Ensure strong tags are bold */
+}
+
 #suggestions {
   position: absolute;
   top: calc(100% + 5px);
@@ -177,4 +212,15 @@ input[type="color"]::-webkit-color-swatch {
     width: 120px; /* Adjust based on your design */
     height: 120px; /* Adjust based on your design */
   }
+}
+
+.copy-icon {
+  cursor: pointer;
+}
+
+.copy-message {
+  font-size: 12px;
+  color: green;
+  margin-top: 5px;
+  display: none;
 }
